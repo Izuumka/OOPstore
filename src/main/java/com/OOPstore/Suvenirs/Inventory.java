@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 public class Inventory {
-    public ArrayList<Suvenir>  inventery = new ArrayList<Suvenir>();
+    public ArrayList<Suvenir>  inventery = new ArrayList<>();
 
     public Inventory(){
         for (int i = 0; i < 6 ; i++) {
@@ -31,8 +31,8 @@ public class Inventory {
     }
 
     public Suvenir getSuvenir(int id){
-        for (int i = 0; i < this.inventery.size() ; i++) {
-            if (this.inventery.get(i).number == id) return this.inventery.get(i);
+        for (int i = 0; i < this.inventery.size(); i++) {
+            if (this.inventery.get(i).getNumber() == id) return this.inventery.get(i);
         }
         return null;
     }

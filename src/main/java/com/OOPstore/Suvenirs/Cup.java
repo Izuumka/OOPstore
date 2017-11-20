@@ -1,9 +1,9 @@
 package com.OOPstore.Suvenirs;
 
 public abstract class Cup extends Suvenir{
-    public float capacity;
-    public String color;
-    public Cup(int number,String name, int price, String type, float capacity, String color) {
+    float capacity;
+    String color;
+    Cup(int number,String name, int price, String type, float capacity, String color) {
         super(number, name, price, type);
         this.capacity = capacity;
         this.color = color;
