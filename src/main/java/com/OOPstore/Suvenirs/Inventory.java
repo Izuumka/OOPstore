@@ -31,8 +31,8 @@ public class Inventory {
     }
 
     public Suvenir getSuvenir(int id){
-        for (int i = 0; i < this.inventery.size(); i++) {
-            if (this.inventery.get(i).getNumber() == id) return this.inventery.get(i);
+        for (Suvenir anInventery : this.inventery) {
+            if (anInventery.getNumber() == id) return anInventery;
         }
         return null;
     }

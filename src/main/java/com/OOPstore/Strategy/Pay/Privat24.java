@@ -44,7 +44,7 @@ public class Privat24 implements PaymentStrategy{
         System.out.println("");
         System.out.println("");
         System.out.println("-----------------Privat Bank 24-------------------");
-        System.out.println("Hello " + name + " your limit is: " + customer.getMoney() );
+//        System.out.println("Hello " + name + " your limit is: " + customer.getMoney() );
 
         String choose;
 

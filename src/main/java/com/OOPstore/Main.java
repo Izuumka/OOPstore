@@ -19,7 +19,7 @@ public class Main {
     public static void shoping(Customer customer, Shop shop) {
 
         Scanner in = new Scanner(System.in);
-        int choose = 10;
+        int choose;
 
         int next;
 
@@ -40,6 +40,7 @@ public class Main {
                 break;
             } else if (0 < choose && choose <= shop.getInventory().inventery.size()) {
                 shop.getBasket().addElement(shop.getSuvenir(choose));
+                customer.setMoney(customer.getMoney() - shop.getSuvenir(choose).getPrice());
             } else {
                 System.out.println("");
                 System.out.println("There are np such suvenir, choose another");
@@ -49,7 +50,6 @@ public class Main {
         }
         switch (next) {
             case 0:
-                System.out.println("THANKS YOU FOR SHOPING");
                 break;
             case 1:
                 if (customer.buy((int) shop.getBasket().getTotal_prise(), shop, customer)) {
