@@ -24,7 +24,7 @@ public class TestSuvenirs {
     public void test1(){
         inventory.show_inventory();
         for (Suvenir suvenir : inventory.inventery){
-            assertEquals(true,suvenir.getPrice()>5);
+            assertEquals(true,suvenir.getPrice()>0);
 
         }
     }
