@@ -8,41 +8,39 @@ import static org.junit.Assert.assertEquals;
 
 
 public class TestSuvenirs {
-    Inventory inventory;
+    Inventory inventory1;
+    Inventory inventory2;
 
     @Before
     public void init() throws Exception {
-        inventory = new Inventory();
+        inventory1 = new Inventory();
+        inventory2 = new Inventory();
 
     }
     @After
     public void  finish() {
-        inventory = null;
+        inventory1 = null;
 
     }
     @Test
     public void test1(){
-        inventory.show_inventory();
-        for (Suvenir suvenir : inventory.inventery){
+        inventory1.show_inventory();
+        for (Suvenir suvenir : inventory1.inventery){
             assertEquals(true,suvenir.getPrice()>0);
 
         }
     }
     @Test
     public void test2(){
-        int lenght = inventory.inventery.size();
-        inventory.deleteSuvenir((int)(Math.random()* (inventory.inventery.size())));
-        assertEquals(true, inventory.inventery.size() == lenght-1);
+        int lenght = inventory1.inventery.size();
+        inventory1.deleteSuvenir((int)(Math.random()* (inventory1.inventery.size())));
+        assertEquals(true, inventory1.inventery.size() == lenght-1);
     }
-//    @Test
-//    public void test3(){
-//        for (int i = 0; i < inventory.inventery.size();) {
-//            inventory.deleteSuvenir(i);
-//
-//        }
-//        assertEquals(true,inventory.inventery.size() == 0);
-//
-//    }
-
-
+    @Test
+    public void test3(){
+        Suvenir suvenir1 = inventory2.getSuvenir(3);
+        inventory2.deleteSuvenir(2);
+        Suvenir suvenir2 = inventory2.getSuvenir(2);
+        assertEquals(false, suvenir1 == suvenir2);
+    }
 }
